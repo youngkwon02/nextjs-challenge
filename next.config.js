@@ -4,6 +4,15 @@ const API_KEY = process.env.API_KEY;
 
 module.exports = {
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: "/old-blog/:path*",
+        destination: "/new-blog/:path*",
+        permanent: false,
+      },
+    ];
+  },
   async rewrites() {
     return [
       {
