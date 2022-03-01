@@ -5,6 +5,7 @@ export default function NavBar() {
   const router = useRouter();
   return (
     <nav>
+      <img src="/vercel.svg"></img>
       <div>
         <Link href="/">
           {/* Link태그에 a태그를 별도로 넣는 이유는 className 또는 style을 지정하기 위해서 */}
