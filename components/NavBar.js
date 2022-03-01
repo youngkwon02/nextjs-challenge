@@ -5,19 +5,41 @@ export default function NavBar() {
   const router = useRouter();
   return (
     <nav>
-      {/* Link태그에 a태그를 별도로 넣는 이유는 className 또는 style을 지정하기 위해서 */}
-      <Link href="/">
-        <a className={router.pathname === "/" ? "active" : ""}>Home</a>
-      </Link>
-      <Link href="/about">
-        <a className={router.pathname === "/about" ? "active" : ""}>About</a>
-      </Link>
+      <div>
+        <Link href="/">
+          {/* Link태그에 a태그를 별도로 넣는 이유는 className 또는 style을 지정하기 위해서 */}
+
+          <a className={router.pathname === "/" ? "active" : ""}>Home</a>
+        </Link>
+        <Link href="/about">
+          <a className={router.pathname === "/about" ? "active" : ""}>About</a>
+        </Link>
+      </div>
       <style jsx>{`
         nav {
-          background-color: tomato;
+          display: flex;
+          gap: 10px;
+          flex-direction: column;
+          align-items: center;
+          padding-top: 20px;
+          padding-bottom: 10px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        }
+        img {
+          max-width: 100px;
+          margin-bottom: 5px;
+        }
+        nav a {
+          font-weight: 600;
+          font-size: 18px;
         }
         .active {
-          color: yellow;
+          color: tomato;
+        }
+        nav div {
+          display: flex;
+          gap: 10px;
         }
       `}</style>
     </nav>
